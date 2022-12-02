@@ -13,6 +13,7 @@ namespace HowToProgramming.Models
         public string Name { get; set; }
 
         public int LanguageId { get; set; }
-        public List<Language> Languages { get; set; }
+        public ICollection<Language> PLanguages { get; set; }
+        public List<LanguageParadigm> JPlanguages { get; set; }
     }
 }

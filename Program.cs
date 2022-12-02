@@ -1,4 +1,7 @@
+using FluentValidation;
 using HowToProgramming.Data;
+using HowToProgramming.Models;
+using HowToProgramming.Validators;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +13,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<HowToProgrammingDBContext>(db =>
         db.UseNpgsql(builder.Configuration.GetConnectionString("connString"))
         );
+
+builder.Services.AddScoped<IValidator<Creator>,CreatorValidator>();
 
 var app = builder.Build();
 

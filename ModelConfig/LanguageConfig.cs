@@ -27,18 +27,11 @@ namespace HowToProgramming.ModelConfig
                 .WithMany(ll => ll.Languages)
                 .HasForeignKey(l => l.LanguageLevelId)
                 .IsRequired();
-
-            // add join table later
-            builder
-                .HasMany(l => l.Paradigms)
-                .WithMany(p => p.Languages);
                 
-
             builder
                 .HasOne(l => l.Typee)
                 .WithMany(t => t.Language)
                 .HasForeignKey(l => l.TypeeId)
-                .IsRequired();
-        }
+                .IsRequired();        }
     }
 }

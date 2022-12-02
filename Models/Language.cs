@@ -14,7 +14,7 @@ namespace HowToProgramming.Models
         public string? CreatorId { get; set; }
         public virtual Creator? Creator { get; set; }     
         public int FrameworkId { get; set; }
-        public virtual List<Framework> Framework { get; set; }
+        public virtual List<Framework> LFrameworks { get; set; }
         public int TypeeId { get; set; }
         public virtual Typee Typee { get; set; }
         public int LanguageLevelId { get; set; }
@@ -22,6 +22,8 @@ namespace HowToProgramming.Models
         public int LanguageFamilyId { get; set; }
         public virtual LanguageFamily LanguageFamily { get; set; }
         public int ParadigmId { get; set; }
-        public virtual List<Paradigm> Paradigms { get; set; }
+        public virtual ICollection<Paradigm> LParadigms { get; set; }
+        public List<LanguageParadigm> JLParadigms { get; set; }
+
     }
 }
