@@ -16,13 +16,13 @@ public class CreatorConfig : IEntityTypeConfiguration<Creator>
             .HasKey(c => c.CreatorId);
 
         builder
-            .HasMany(c => c.CLanguages)
+            .HasMany(c => c.Languages)
             .WithOne(l => l.Creator)
             .HasForeignKey(c => c.LanguageId)
             .IsRequired();
 
         builder
-            .HasMany(c => c.CFrameworks)
+            .HasMany(c => c.Frameworks)
             .WithOne(fr => fr.Creator)
             .HasForeignKey(c => c.FrameWorkId);
 
@@ -31,10 +31,5 @@ public class CreatorConfig : IEntityTypeConfiguration<Creator>
             .WithMany(g => g.Creator)
             .HasForeignKey(c => c.GenderId)
             .IsRequired();
-
-        builder
-        .Property(c => c.DOB)
-        .
-
     }
 }

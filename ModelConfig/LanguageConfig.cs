@@ -30,28 +30,15 @@ namespace HowToProgramming.ModelConfig
 
             // add join table later
             builder
-                .HasMany(l => l.LParadigms)
-                .WithMany(p => p.PLanguages)
-                .UsingEntity<LanguageParadigm>(
-                    lp => lp
-                            .HasOne(lp => lp.Language)
-                            .WithMany(l => l.JLParadigms)
-                            .HasForeignKey(lp => lp.LanguageId),
-                    lp => lp
-                            .HasOne(lp => lp.Paradigm)
-                            .WithMany(p => p.JPlanguages)
-                            .HasForeignKey(lp => lp.ParadigmId),
-                    
-                    lp => {
-                        lp.HasKey( lp => new {lp.LanguageId, lp.ParadigmId});
-                    }
-                );
-
+                .HasMany(l => l.Paradigms)
+                .WithMany(p => p.Languages);
+                
 
             builder
                 .HasOne(l => l.Typee)
                 .WithMany(t => t.Language)
                 .HasForeignKey(l => l.TypeeId)
-                .IsRequired();        }
+                .IsRequired();
+        }
     }
 }
