@@ -22,7 +22,7 @@ namespace HowToProgramming.Data
         DbSet<LanguageLevel> LanguageLevel {get;set;}
         DbSet<Paradigm> Paradigms {get;set;}
         DbSet<Typee> Typees {get;set;}
-        
+        DbSet<LanguageParadigm> LanguageParadigms {get;set;}        
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             new CreatorConfig().Configure(modelBuilder.Entity<Creator>());
             new LanguageConfig().Configure(modelBuilder.Entity<Language>());
