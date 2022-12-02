@@ -32,6 +32,16 @@ namespace HowToProgramming.ModelConfig
                 .HasOne(l => l.Typee)
                 .WithMany(t => t.Language)
                 .HasForeignKey(l => l.TypeeId)
-                .IsRequired();        }
+                .IsRequired();        
+                
+                
+            builder
+                .HasOne(l => l.Creator)
+                .WithMany(c => c.CLanguages)
+                .HasForeignKey(l => l.CreatorId)
+                .IsRequired();        
+                
+                
+        }
     }
 }
