@@ -11,7 +11,7 @@ namespace HowToProgramming.Models
         public int LanguageId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string? CreatorId { get; set; }
+        public int? CreatorId { get; set; }
         public virtual Creator? Creator { get; set; }     
         public int FrameworkId { get; set; }
         public virtual List<Framework> LFrameworks { get; set; }

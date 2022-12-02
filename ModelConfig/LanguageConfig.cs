@@ -39,9 +39,8 @@ namespace HowToProgramming.ModelConfig
                 .HasOne(l => l.Creator)
                 .WithMany(c => c.CLanguages)
                 .HasForeignKey(l => l.CreatorId)
-                .IsRequired();        
-                
-                
+                .IsRequired();
+                    
         }
     }
 }
