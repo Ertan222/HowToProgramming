@@ -5,4 +5,8 @@ I am doing this project for learn something new and improve my developer skills.
 
 # Day 1
 
-Added models and some config files
+Models and creator and language config files added.
+
+# Day 2
+
+Fluent validation, modelstate extension, and language + paradigm join table added.
