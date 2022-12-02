@@ -1,21 +1,16 @@
-﻿using System.ComponentModel;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using HowToProgramming.Models;
-using FluentValidation;
-using HowToProgramming.Extensions;
-using FluentValidation.Results;
-using HowToProgramming.Validators;
 
 namespace HowToProgramming.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
-        
     }
 
     public IActionResult Index()
