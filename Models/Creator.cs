@@ -6,8 +6,6 @@ namespace HowToProgramming.Models;
     {
         public int? CreatorId { get; set; }   
         public string? Name { get; set; }
-
-        // date of birth'ü fluent yap bir ara
         [Required(ErrorMessage = "{0} must be filled"), Display(Name = "Date of birth")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "(0:dd/MM/yyyy)")]
         [DataType(DataType.Date, ErrorMessage ="Date is not in correct form")]

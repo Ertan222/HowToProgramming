@@ -40,7 +40,24 @@ namespace HowToProgramming.ModelConfig
                 .WithMany(c => c.CLanguages)
                 .HasForeignKey(l => l.CreatorId)
                 .IsRequired();
-                    
+
+            builder
+                .HasMany(l => l.LParadigms)
+                .WithMany(p => p.PLanguages)
+                .UsingEntity<LanguageParadigm>(
+                    lp =>
+                        lp.HasOne(lp => lp.Paradigm)
+                            .WithMany(l => l.JPlanguages)
+                            .HasForeignKey(lp => lp.ParadigmId),
+                    lp => 
+                        lp.HasOne(lp => lp.Language)
+                            .WithMany(l => l.JLParadigms)
+                            .HasForeignKey(lp => lp.LanguageId),
+                    lp => 
+                        lp.HasKey(
+                           lp => new {lp.LanguageId,lp.ParadigmId}
+                        )
+                );
         }
     }
 }

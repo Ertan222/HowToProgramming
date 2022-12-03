@@ -11,7 +11,6 @@ namespace HowToProgramming.Models
         [Key]
         public int LanguageFamilyId { get; set; }
         public string Name { get; set; }
-        public int LanguageId { get; set; }
         public List<Language> Languages { get; set; }
     }
 }

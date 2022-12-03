@@ -13,7 +13,8 @@ namespace HowToProgramming.Validators
         public CreatorValidator() {
             RuleFor(c => c.Name)
             .Cascade(CascadeMode.Stop)
-            .NotEmpty().WithMessage("{PropertyName} is empty, please write your name");
+            .NotEmpty().WithMessage("{PropertyName} is empty, please write your name")
+            .MinimumLength(2).MaximumLength(60).WithMessage("{PropertyName} needs to be between 2 - 60 character");
             
 
             RuleFor(c => c.GenderId)
@@ -31,6 +32,8 @@ namespace HowToProgramming.Validators
             .Cascade(CascadeMode.Stop)
             .NotEmpty().WithMessage("{PropertyName} is empty, please choose a framework")
             .LessThan(200).GreaterThanOrEqualTo(1).WithMessage("Please select valid {PropertyNaame}");
+
+
         }
 
     }

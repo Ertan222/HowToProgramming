@@ -7,7 +7,6 @@ namespace HowToProgramming.Models
         [Key]
         public int GenderId { get; set; }
         public string Name { get; set; }
-        public int CreatorId { get; set; }
         public virtual List<Creator> Creator { get; set; }
     }
 }

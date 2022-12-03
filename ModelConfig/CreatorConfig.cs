@@ -31,10 +31,5 @@ public class CreatorConfig : IEntityTypeConfiguration<Creator>
             .WithMany(g => g.Creator)
             .HasForeignKey(c => c.GenderId)
             .IsRequired();
-
-        // builder
-        // .Property(c => c.DOB)
-        // .
-
     }
 }

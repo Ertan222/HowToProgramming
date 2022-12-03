@@ -11,5 +11,7 @@ namespace HowToProgramming.Models
         public int CreatorId { get; set; }
         public virtual Creator Creator { get; set; }
 
+        public virtual List<Language> Languages { get; set; }
+
     }
 }
