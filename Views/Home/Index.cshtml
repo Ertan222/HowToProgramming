@@ -1,4 +1,7 @@
-﻿@{ ViewData["Title"] = "Home Page"; }
+﻿@model Try
+
+
+@{ ViewData["Title"] = "Home Page"; }
 
 <div class="text-center">
   <h1 class="display-4">Welcome</h1>
@@ -11,8 +14,8 @@
 </div>
 
 <form asp-controller="" asp-action="" method="post">
-  <div asp-validation-summary="All"></div>
-  <label for="name">Please give me your name:</label>
-  <input name="name" id="name" />
-  <input type="submit" />
+  <div asp-validation-summary="All" class="text-danger"></div>
+  <label for="DOB">Please give me your date of birth:</label>
+  <input name="DOB" id="DOB" type="date" />
+  <button type="submit"></button>
 </form>
