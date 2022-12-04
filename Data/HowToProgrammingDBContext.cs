@@ -25,7 +25,7 @@ namespace HowToProgramming.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             new CreatorConfig().Configure(modelBuilder.Entity<Creator>());
             new LanguageConfig().Configure(modelBuilder.Entity<Language>());
-
+            new FrameworkConfig().Configure(modelBuilder.Entity<Framework>());
         }
     }
 }

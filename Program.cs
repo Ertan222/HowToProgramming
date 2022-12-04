@@ -14,8 +14,15 @@ builder.Services.AddDbContext<HowToProgrammingDBContext>(db =>
         db.UseNpgsql(builder.Configuration.GetConnectionString("connString"))
         );
 
-builder.Services.AddScoped<IValidator<Creator>,CreatorValidator>();
 
+builder.Services.AddScoped<IValidator<Creator>,CreatorValidator>();
+builder.Services.AddScoped<IValidator<Framework>,FrameworkValidator>();
+builder.Services.AddScoped<IValidator<Gender>,GenderValidator>();
+builder.Services.AddScoped<IValidator<Language>,LanguageValidator>();
+builder.Services.AddScoped<IValidator<LanguageFamily>,LanguageFamilyValidator>();
+builder.Services.AddScoped<IValidator<LanguageLevel>,LanguageLevelValidator>();
+builder.Services.AddScoped<IValidator<Paradigm>,ParadigmValidator>();
+builder.Services.AddScoped<IValidator<Typee>,TypeeValidator>();
 var app = builder.Build();
 
 
