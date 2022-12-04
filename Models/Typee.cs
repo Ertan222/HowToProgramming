@@ -7,7 +7,6 @@ namespace HowToProgramming.Models
         [Key]
         public int TypeeId { get; set; }
         public string Name { get; set; }
-        public int LanguageId { get; set; }
         public List<Language> Language { get; set; }
     }
 }
