@@ -12,10 +12,7 @@ namespace HowToProgramming.Models;
         public DateTime DOB { get; set; }
         public int? GenderId { get; set; }
         public virtual Gender Gender { get; set; }
-        public int? LanguageId { get; set; }
         public virtual List<Language> CLanguages { get; set; }
-
-        public int? FrameworkId { get; set; }
         public virtual List<Framework> CFrameworks { get; set; }
 
     }
