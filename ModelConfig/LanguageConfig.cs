@@ -40,7 +40,7 @@ namespace HowToProgramming.ModelConfig
                 .WithMany(c => c.CLanguages)
                 .HasForeignKey(l => l.CreatorId)
                 .IsRequired();
-
+            
             builder
                 .HasMany(l => l.LParadigms)
                 .WithMany(p => p.PLanguages)
@@ -58,6 +58,7 @@ namespace HowToProgramming.ModelConfig
                            lp => new {lp.LanguageId,lp.ParadigmId}
                         )
                 );
+                    
         }
     }
 }
